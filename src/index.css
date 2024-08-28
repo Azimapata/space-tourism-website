@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.mobile{
+    background-image: url('./assets/home/background-home-mobile.jpg');
+}
+
+@font-face {
+    font-family: Bellefair-Regular;
+    src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlo-Regular;
+    src: url('./Fonts/Barlow/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlo-Condensed-ExtraLight;
+    src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: Bellefair-Regular;
+    src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlo-Regular;
+    src: url('./Fonts/Barlow/Barlow-Light.ttf');
+}
+
+
+@media screen and (min-width: 768px) {
+    .mobile {
+      background-image: url('./assets/home/background-home-tablet.jpg');
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .mobile {
+      background-image: url('./assets/home/background-home-desktop.jpg');
+    }
+  }
