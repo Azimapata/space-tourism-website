@@ -13,7 +13,7 @@ const Home = () => {
      because we’ll give you a truly out of this world <br />
       experience!</p>
 
-    <img src={displayButtonMobile} alt="" className='mx-auto pt-32' />  
+    <img src={displayButtonMobile} alt="" className='mx-auto pt-28' />  
    </div>
       
     </div>
