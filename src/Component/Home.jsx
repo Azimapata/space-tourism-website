@@ -1,44 +1,102 @@
-import displayButtonMobile from '../assets/home/Display Button States - Mobile.png'
+import { useState } from 'react';
+import displayButtonMobile from '../assets/home/Display Button States - Mobile.svg';
+import logo from '../assets/shared/logo.svg';
+import hamburger from '../assets/shared/icon-hamburger.svg';
+import closeIcon from '../assets/shared/icon-close.svg';
 
 const Home = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div  >
-   <div className="mobile  text-center text-[#D0D6F9]  w-full h-screen bg-cover bg-center">
-   <p className="] font-[Barlo-Condensed-ExtraLight] text-[18px] md:text-[34px] pt-32 md:pt-64 tracking-wider">SO, YOU WANT TO TRAVEL TO </p>
-   <h1 className="font-[Bellefair-Regular] text-[86px] md:text-[144px] pt-3 text-white">SPACE</h1>
+    <div>
+      <div className='mobile w-full h-screen bg-cover bg-center'>
+        <div className='flex justify-between items-end'>
+          <img src={logo} alt="Logo" className=' md:w-16 top-8 md:top-0 mb-0 md:mb-5 relative ml-5 md:ml-14' /> 
 
-  <p className="font-[Barlo-Regular] text-[16px] md:text-[20px] lg:text-[24px] pt-3">
-  {/* Mobile (default) */}
-  <span className="block md:hidden">
-    Let’s face it; if you want to go to space, you might <br />
-    as well genuinely go to outer space and not hover <br />
-    kind of on the edge of it. Well sit back, and relax <br />
-    because we’ll give you a truly out of this world <br />
-    experience!
-  </span>
+          {/* Hamburger menu for mobile screens */}
+          <div className='block md:hidden'>
+            {!menuOpen && (
+              <img
+                src={hamburger}
+                alt="Menu Icon"
+                className='mr-9 top-4 relative cursor-pointer'
+                onClick={toggleMenu}
+              />
+            )}
+          </div>
 
-  {/* Tablet */}
-  <span className="hidden md:block lg:hidden">
-    Let’s face it; if you want to go to space, you might as well genuinely go to 
-    <br />outer space and not hover kind of on the edge of it.  Well sit back, and relax 
-    <br /> because  we’ll give you a truly out of this world experience!
-  </span>
+          {/* Navbar for tablet and desktop screens */}
+          <div className='hidden md:flex relative  bg-[#20253eaa]  px-20 py-10  font-[Barlo-Condensed-ExtraLight] text-[19px] tracking-wider '> 
+            {/* Add your navbar code here */}
+            <ul className='flex space-x-12 text-white'>
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#about"><span className='font-[Barlo-Condensed-Bold]  pr-3'>01</span>DESTINATION</a></li>
+              <li><a href="#services"><span className='font-[Barlo-Condensed-Bold]  pr-3'>02</span>CREW</a></li>
+              <li><a href="#contact"><span className='font-[Barlo-Condensed-Bold]  pr-3'>03</span>TECHNOLOGY</a></li>
+            </ul>
+          </div>
+        </div>
 
-  {/* Desktop */}
-  <span className="hidden lg:block">
-    Let’s face it; if you want to go to space, you <br />
-    might as well genuinely go to outer space and <br />
-    not hover kind of on the edge of it. Well sit <br />
-    back, and relax because we’ll give you <br />
-    a truly out of this world experience!
-  </span>
-</p>
+        {/* Conditional Rendering for the Mobile Menu */}
+        <div
+          className={`fixed top-0 right-0 h-full bg-[#0B0D17] backdrop-blur-lg bg-opacity-55 transform ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out w-2/3`}
+        >
+          <img
+            src={closeIcon}
+            alt="Close Icon"
+            className='absolute top-12 right-6 cursor-pointer'
+            onClick={toggleMenu}
+          />
 
-    <img src={displayButtonMobile} alt="" className='mx-auto pt-28 md:pt-24 w-36 md:w-72' />  
-   </div>
-      
+          <ul className='text-white space-y-5 mt-32 ml-8 font-[Barlo-Condensed-ExtraLight] text-[18px] tracking-widest'>
+            <li><a href="#home" onClick={toggleMenu}><span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>00</span>HOME</a></li>
+            <li><a href="#about" onClick={toggleMenu}><span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>01</span>DESTINATION</a></li>
+            <li><a href="#services" onClick={toggleMenu}><span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>02</span>CREW</a></li>
+            <li><a href="#contact" onClick={toggleMenu}><span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>03</span>TECHNOLOGY</a></li>
+          </ul>
+        </div>
+
+        <div className="text-center text-[#D0D6F9]">
+          <p className="font-[Barlo-Condensed-ExtraLight] text-[18px] md:text-[34px] pt-32 md:pt-28 tracking-wider">
+            SO, YOU WANT TO TRAVEL TO
+          </p>
+          <h1 className="font-[Bellefair-Regular] text-[86px] md:text-[144px] pt-3 text-white">
+            SPACE
+          </h1>
+
+          <p className="font-[Barlo-Regular] text-[16px] md:text-[20px] lg:text-[24px] pt-3">
+            <span className="block md:hidden">
+              Let’s face it; if you want to go to space, you might <br />
+              as well genuinely go to outer space and not hover <br />
+              kind of on the edge of it. Well sit back, and relax <br />
+              because we’ll give you a truly out of this world <br />
+              experience!
+            </span>
+            <span className="hidden md:block lg:hidden">
+              Let’s face it; if you want to go to space, you might as well genuinely go to <br />
+              outer space and not hover kind of on the edge of it. Well sit back, and relax <br />
+              because we’ll give you a truly out of this world experience!
+            </span>
+            <span className="hidden lg:block">
+              Let’s face it; if you want to go to space, you <br />
+              might as well genuinely go to outer space and <br />
+              not hover kind of on the edge of it. Well sit <br />
+              back, and relax because we’ll give you <br />
+              a truly out of this world experience!
+            </span>
+          </p>
+
+          <img src={displayButtonMobile} alt="Display Button" className='mx-auto pt-14 md:pt-24 w-36 md:w-72' />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

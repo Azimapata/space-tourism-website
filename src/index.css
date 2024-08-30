@@ -23,6 +23,11 @@
 }
 
 @font-face {
+  font-family: Barlo-Condensed-Bold;
+  src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-SemiBold.ttf');
+}
+
+@font-face {
     font-family: Bellefair-Regular;
     src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
 }
