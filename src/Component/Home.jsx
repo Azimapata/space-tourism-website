@@ -3,6 +3,7 @@ import displayButtonMobile from '../assets/home/Display Button States - Mobile.s
 import logo from '../assets/shared/logo.svg';
 import hamburger from '../assets/shared/icon-hamburger.svg';
 import closeIcon from '../assets/shared/icon-close.svg';
+// import line from '../assets/home/line.svg'
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const Home = () => {
     <div>
       <div className='mobile w-full h-screen bg-cover bg-center'>
         <div className='flex justify-between items-end'>
-          <img src={logo} alt="Logo" className=' md:w-16 top-8 md:top-0 mb-0 md:mb-5 relative ml-5 md:ml-14' /> 
+          <img src={logo} alt="Logo" className=' md:w-16 lg:w-11 top-8 md:top-0 lg:top-8 mb-0 md:mb-5 relative ml-5 md:ml-14' /> 
 
           {/* Hamburger menu for mobile screens */}
           <div className='block md:hidden'>
@@ -30,8 +31,9 @@ const Home = () => {
           </div>
 
           {/* Navbar for tablet and desktop screens */}
-          <div className='hidden md:flex relative  bg-[#20253eaa]  px-20 py-10  font-[Barlo-Condensed-ExtraLight] text-[19px] tracking-wider '> 
+          <div className='hidden md:flex relative  bg-[#20253eaa] backdrop-blur-lg  px-20 lg:px-28 py-10 lg:py-7  lg:top-8 font-[Barlo-Condensed-ExtraLight] text-[19px] tracking-wider '> 
             {/* Add your navbar code here */}
+            {/* <img src={line} alt="" className='hidden lg:flex' /> */}
             <ul className='flex space-x-12 text-white'>
               <li><a href="#home">HOME</a></li>
               <li><a href="#about"><span className='font-[Barlo-Condensed-Bold]  pr-3'>01</span>DESTINATION</a></li>
@@ -62,15 +64,16 @@ const Home = () => {
           </ul>
         </div>
 
-        <div className="text-center text-[#D0D6F9]">
-          <p className="font-[Barlo-Condensed-ExtraLight] text-[18px] md:text-[34px] pt-32 md:pt-28 tracking-wider">
+            <div className=' flex flex-col lg:flex-row lg:overflow-hidden lg:justify-between'>
+            <div className="text-center text-[#D0D6F9] lg:relative lg:top-32 left-20 ">
+          <p className="font-[Barlo-Condensed-ExtraLight] text-[18px] md:text-[34px] lg:text-[27px] pt-32 md:pt-28   tracking-wider">
             SO, YOU WANT TO TRAVEL TO
           </p>
-          <h1 className="font-[Bellefair-Regular] text-[86px] md:text-[144px] pt-3 text-white">
+          <h1 className="font-[Bellefair-Regular] text-[86px] md:text-[144px] lg:text-[100px] pt-3 text-white">
             SPACE
           </h1>
 
-          <p className="font-[Barlo-Regular] text-[16px] md:text-[20px] lg:text-[24px] pt-3">
+          <p className="font-[Barlo-Regular] text-[16px] md:text-[20px] lg:text-[24px]  pb-14 md:pb-32 ">
             <span className="block md:hidden">
               Let’s face it; if you want to go to space, you might <br />
               as well genuinely go to outer space and not hover <br />
@@ -83,17 +86,19 @@ const Home = () => {
               outer space and not hover kind of on the edge of it. Well sit back, and relax <br />
               because we’ll give you a truly out of this world experience!
             </span>
-            <span className="hidden lg:block">
-              Let’s face it; if you want to go to space, you <br />
-              might as well genuinely go to outer space and <br />
-              not hover kind of on the edge of it. Well sit <br />
-              back, and relax because we’ll give you <br />
-              a truly out of this world experience!
+            <span className="hidden lg:block lg:text-[16px]">
+              Let’s face it; if you want to go to space, you  might as well genuinely go <br />
+               to outer space and   not hover kind of on the edge of it. Well sit  back, <br /> 
+               and relax because we’ll give you  a truly out of this world experience!
             </span>
           </p>
-
-          <img src={displayButtonMobile} alt="Display Button" className='mx-auto pt-14 md:pt-24 w-36 md:w-72' />
         </div>
+
+        <div className='flex justify-center items-center '>
+           <img src={displayButtonMobile} alt="Display Button" className='w-36 md:w-72 lg:w-60 lg:right-20 top-32update lg:relative' />
+           </div>
+            </div>
+       
       </div>
     </div>
   );
