@@ -95,7 +95,7 @@ const Home = () => {
         </div>
 
         <div className='flex justify-center items-center '>
-           <img src={displayButtonMobile} alt="Display Button" className='w-36 md:w-72 lg:w-60 lg:right-20 top-32update lg:relative' />
+           <img src={displayButtonMobile} alt="Display Button" className='w-36 md:w-72 lg:w-60 lg:right-20 top-32 lg:relative' />
            </div>
             </div>
        
