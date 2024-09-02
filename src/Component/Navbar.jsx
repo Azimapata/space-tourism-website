@@ -30,7 +30,7 @@ const Navbar = () => {
 
       <div className='hidden md:flex relative bg-[#363747] backdrop-blur-3xl px-20 lg:px-28 py-10 lg:py-7 lg:top-8 font-[Barlo-Condensed-ExtraLight] text-[19px] tracking-wider'> 
         <ul className='flex space-x-12 text-white'>
-          <li><a href="#home">HOME</a></li>
+          <li><a href="#home"><span className='font-[Barlo-Condensed-Bold] pr-3'>00</span>HOME</a></li>
           <li><a href="#about"><span className='font-[Barlo-Condensed-Bold] pr-3'>01</span>DESTINATION</a></li>
           <li><a href="#services"><span className='font-[Barlo-Condensed-Bold] pr-3'>02</span>CREW</a></li>
           <li><a href="#contact"><span className='font-[Barlo-Condensed-Bold] pr-3'>03</span>TECHNOLOGY</a></li>
