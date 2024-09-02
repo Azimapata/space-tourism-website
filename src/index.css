@@ -3,49 +3,73 @@
 @tailwind utilities;
 
 
-.mobile{
+@font-face {
+  font-family: Bellefair-Regular;
+  src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
+}
+
+@font-face {
+  font-family: Barlo-Regular;
+  src: url('./Fonts/Barlow/Barlow-Regular.ttf');
+  
+}
+@font-face {
+  font-family: Barlo-Light;
+  src: url('./Fonts/Barlow/Barlow-Light.ttf');
+
+}
+
+@font-face {
+  font-family: Barlo-Condensed-ExtraLight;
+  src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-ExtraLight.ttf');
+}
+
+@font-face {
+font-family: Barlo-Condensed-Bold;
+src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Bellefair-Regular;
+  src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
+}
+
+@font-face {
+  font-family: Barlo-Regular;
+  src: url('./Fonts/Barlow/Barlow-Light.ttf');
+}
+
+
+.home{
     background-image: url('./assets/home/background-home-mobile.jpg');
-}
-
-@font-face {
-    font-family: Bellefair-Regular;
-    src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
-}
-
-@font-face {
-    font-family: Barlo-Regular;
-    src: url('./Fonts/Barlow/Barlow-Regular.ttf');
-}
-
-@font-face {
-    font-family: Barlo-Condensed-ExtraLight;
-    src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-ExtraLight.ttf');
-}
-
-@font-face {
-  font-family: Barlo-Condensed-Bold;
-  src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-SemiBold.ttf');
-}
-
-@font-face {
-    font-family: Bellefair-Regular;
-    src: url('./Fonts/Bellefair/Bellefair-Regular.ttf');
-}
-
-@font-face {
-    font-family: Barlo-Regular;
-    src: url('./Fonts/Barlow/Barlow-Light.ttf');
 }
 
 
 @media screen and (min-width: 768px) {
-    .mobile {
+    .home{
       background-image: url('./assets/home/background-home-tablet.jpg');
     }
   }
   
   @media screen and (min-width: 1024px) {
-    .mobile {
+    .home {
       background-image: url('./assets/home/background-home-desktop.jpg');
     }
   }
+
+  .destination{
+    background-image: url('./assets/destination/background-destination-mobile.jpg');
+}
+
+
+@media screen and (min-width: 768px) {
+  .destination{
+    background-image: url('./assets/destination/background-destination-tablet.jpg');
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .destination {
+    background-image: url('./assets/destination/background-destination-desktop.jpg');
+  }
+}

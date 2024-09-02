@@ -1,10 +1,12 @@
-import Home from './Component/Home'
+// import Home from './Component/Home'
+import Destination from "./Component/Destination"
 import "./index.css"
 
 const App = () => {
   return (
     <div>
-      <Home/>
+      {/* <Home/> */}
+      <Destination/>
     </div>
   )
 }
