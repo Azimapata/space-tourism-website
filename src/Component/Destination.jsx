@@ -49,7 +49,7 @@ const Destination = () => {
       <div className='destination w-full h-screen bg-cover bg-center'>
         <Navbar/>
 
-        <p className='text-center text-white pt-16 md:pt-8 md:right-60 relative font-[Barlo-Condensed-ExtraLight] tracking-wider text-[18px] md:text-[23px]'>
+        <p className='text-center text-white pt-16 md:pt-8 md:right-60  font-[Barlo-Condensed-ExtraLight] tracking-wider text-[18px] md:text-[23px]'>
           <span className='font-[Barlo-Condensed-Bold] pr-7 opacity-50'>01</span>PICK YOUR DESTINATION
         </p>
 
