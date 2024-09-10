@@ -87,39 +87,55 @@ const Navbar = () => {
         />
 
         {/* Mobile Navigation Links */}
-        <ul className='text-white space-y-5 mt-32 ml-8 font-[Barlo-Condensed-ExtraLight] text-[18px] tracking-widest'>
-          <li>
+        <ul className='text-white space-y-5 mt-32 ml-8 font-[Barlo-Condensed-ExtraLight] text-[18px] tracking-widest relative'>
+          <li className='relative'>
             <NavLink 
               to="/" 
               onClick={toggleMenu}
-              className={({ isActive }) => isActive ? 'border-b-2 border-white pb-2' : ''}
+              className={({ isActive }) => 
+                isActive 
+                  ? 'border-r-4 border-white pr-6'
+                  : 'pl-4 pr-3'
+              }
             >
               <span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>00</span>HOME
             </NavLink>
           </li>
-          <li>
+          <li className='relative'>
             <NavLink 
               to="/destination" 
               onClick={toggleMenu}
-              className={({ isActive }) => isActive ? 'border-b-2 border-white pb-2' : ''}
+              className={({ isActive }) => 
+                isActive 
+                  ? 'border-r-4 border-white pr-6'
+                  : 'pl-4 pr-3'
+              }
             >
               <span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>01</span>DESTINATION
             </NavLink>
           </li>
-          <li>
+          <li className='relative'>
             <NavLink 
               to="/crew" 
               onClick={toggleMenu}
-              className={({ isActive }) => isActive ? 'border-b-2 border-white pb-2' : ''}
+              className={({ isActive }) => 
+                isActive 
+                  ? 'border-r-4 border-white pr-6'
+                  : 'pl-4 pr-3'
+              }
             >
               <span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>02</span>CREW
             </NavLink>
           </li>
-          <li>
+          <li className='relative'>
             <NavLink 
               to="/technology" 
               onClick={toggleMenu}
-              className={({ isActive }) => isActive ? 'border-b-2 border-white pb-2' : ''}
+              className={({ isActive }) => 
+                isActive 
+                  ? 'border-r-4 border-white pr-6'
+                  : 'pl-4 pr-3'
+              }
             >
               <span className='font-[Barlo-Condensed-Bold] pl-4 pr-3'>03</span>TECHNOLOGY
             </NavLink>
