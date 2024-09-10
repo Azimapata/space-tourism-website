@@ -73,3 +73,35 @@ src: url('./Fonts/Barlow_Condensed/Barlow_Condensed/BarlowCondensed-SemiBold.ttf
     background-image: url('./assets/destination/background-destination-desktop.jpg');
   }
 }
+  .crew{
+    background-image: url('./assets/crew/background-crew-mobile.jpg');
+}
+
+
+@media screen and (min-width: 768px) {
+  .crew{
+    background-image: url('./assets/crew/background-crew-tablet.jpg');
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .crew {
+    background-image: url('./assets/crew/background-crew-desktop.jpg');
+  }
+}
+  .technology{
+    background-image: url('./assets/technology/background-technology-mobile.jpg');
+}
+
+
+@media screen and (min-width: 768px) {
+  .technology{
+    background-image: url('./assets/technology//background-technology-tablet.jpg');
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .technology {
+    background-image: url('./assets/technology/background-technology-desktop.jpg');
+  }
+}
