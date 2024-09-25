@@ -36,7 +36,7 @@ const Technology = () => {
   return (
     <div>
       {/* Container for the entire Technology section with full-screen height */}
-      <div className='technology w-full h-screen bg-cover bg-center'>
+      <div className='w-full h-screen bg-center bg-cover technology'>
         {/* Navbar Component */}
         <Navbar />
 
@@ -58,14 +58,14 @@ const Technology = () => {
             <img 
               src={content[activeIndex - 1].landscapeImage} 
               alt={content[activeIndex - 1].title} 
-              className="lg:hidden w-full h-auto object-cover pt-20 mx-auto" 
+              className="object-cover w-full h-auto pt-20 mx-auto lg:hidden" 
             />
           </div>
 
           {/* Text and Navigation Buttons */}
-          <div className='lg:w-1/2 lg:pl-56 flex flex-col lg:flex-row items-center lg:items-start'>
+          <div className='flex flex-col items-center lg:w-1/2 lg:pl-56 lg:flex-row lg:items-start'>
             {/* Navigation buttons for different technology options */}
-            <div className='flex flex-row lg:flex-col space-x-2 lg:space-y-4 lg:space-x-0 pt-5 lg:pt-0'>
+            <div className='flex flex-row pt-5 space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:pt-0'>
               {content.map((_, index) => (
                 <button
                   key={index}
@@ -82,9 +82,9 @@ const Technology = () => {
             {/* Information about the selected technology */}
             <div className="text-center lg:text-left text-white font-[Bellefair-Regular] mt-1 lg:mt-0 lg:pl-16">
               {/* Subheading */}
-              <h1 className="text-lg md:text-2xl lg:text-3xl opacity-50 pt-7 lg:pt-0">THE TERMINOLOGY...</h1>
+              <h1 className="text-lg opacity-50 md:text-2xl lg:text-3xl pt-7 lg:pt-0">THE TERMINOLOGY...</h1>
               {/* Title of the selected technology */}
-              <p className="text-2xl md:text-5xl lg:text-6xl pt-3 lg:pt-7">{content[activeIndex - 1].title}</p>
+              <p className="pt-3 text-2xl md:text-5xl lg:text-6xl lg:pt-7">{content[activeIndex - 1].title}</p>
               {/* Description of the selected technology */}
               <p className="font-[Barlo-Regular] text-[15px] md:text-[20px] pt-6 tracking-wide text-[#D0D6F9]">
                 {/* Split description into multiple lines with <br /> tags */}
