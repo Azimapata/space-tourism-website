@@ -5,8 +5,10 @@ import hamburger from '../assets/shared/icon-hamburger.svg';
 import closeIcon from '../assets/shared/icon-close.svg';
 
 const Navbar = () => {
+  // State to manage whether the mobile menu is open or not
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Function to toggle the mobile menu's visibility
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -22,24 +24,27 @@ const Navbar = () => {
         /> 
 
         {/* Hamburger Menu Icon for Mobile */}
+        {/* Displayed only when menu is closed */}
         <div className='block md:hidden'>
           {!menuOpen && (
             <img
               src={hamburger}
               alt="Menu Icon"
               className='mr-9 top-4 relative cursor-pointer'
-              onClick={toggleMenu}
+              onClick={toggleMenu} // Toggle menu open state when clicked
             />
           )}
         </div>
 
         {/* Desktop Menu */}
+        {/* Visible only on medium and larger screens */}
         <div className='hidden md:flex relative backdrop-blur-3xl border-[0.3px] border-transparent px-20 lg:px-56 py-10 lg:py-7 lg:top-8 font-[Barlo-Condensed-ExtraLight] text-[19px] tracking-wider'> 
           <ul className='flex space-x-12 text-white'>
             <li>
               <NavLink 
                 to="/" 
                 className={({ isActive }) => isActive ? 'border-b-2 border-white pb-2' : ''}
+                // Adds a bottom border when the link is active
               >
                 <span className='font-[Barlo-Condensed-Bold] pr-3'>00</span>HOME
               </NavLink>
@@ -73,6 +78,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
+      {/* Sliding menu for mobile devices, visible only when menuOpen is true */}
       <div
         className={`fixed top-0 right-0 h-full bg-[#0B0D17] backdrop-blur-lg bg-opacity-55 transform ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -83,7 +89,7 @@ const Navbar = () => {
           src={closeIcon}
           alt="Close Icon"
           className='absolute top-12 right-6 cursor-pointer'
-          onClick={toggleMenu}
+          onClick={toggleMenu} // Closes the menu when clicked
         />
 
         {/* Mobile Navigation Links */}
@@ -91,10 +97,10 @@ const Navbar = () => {
           <li className='relative'>
             <NavLink 
               to="/" 
-              onClick={toggleMenu}
+              onClick={toggleMenu} // Closes menu on link click
               className={({ isActive }) => 
                 isActive 
-                  ? 'border-r-4 border-white pr-6'
+                  ? 'border-r-4 border-white pr-6' // Adds a right border if active
                   : 'pl-4 pr-3'
               }
             >
@@ -104,7 +110,7 @@ const Navbar = () => {
           <li className='relative'>
             <NavLink 
               to="/destination" 
-              onClick={toggleMenu}
+              onClick={toggleMenu} // Closes menu on link click
               className={({ isActive }) => 
                 isActive 
                   ? 'border-r-4 border-white pr-6'
@@ -117,7 +123,7 @@ const Navbar = () => {
           <li className='relative'>
             <NavLink 
               to="/crew" 
-              onClick={toggleMenu}
+              onClick={toggleMenu} // Closes menu on link click
               className={({ isActive }) => 
                 isActive 
                   ? 'border-r-4 border-white pr-6'
@@ -130,7 +136,7 @@ const Navbar = () => {
           <li className='relative'>
             <NavLink 
               to="/technology" 
-              onClick={toggleMenu}
+              onClick={toggleMenu} // Closes menu on link click
               className={({ isActive }) => 
                 isActive 
                   ? 'border-r-4 border-white pr-6'

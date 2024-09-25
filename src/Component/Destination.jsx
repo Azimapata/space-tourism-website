@@ -5,9 +5,12 @@ import Europa from '../assets/destination/image-europa.png';
 import Titan from '../assets/destination/image-titan.png';
 import Navbar from './Navbar';
 
+// Destination component to display information about different destinations
 const Destination = () => {
+  // State to track the currently selected destination
   const [selectedDestination, setSelectedDestination] = useState('Moon');
 
+  // Object containing data for each destination, including image, name, description, distance, and travel time
   const destinations = {
     Moon: {
       image: Moon,
@@ -50,52 +53,82 @@ const Destination = () => {
     }
   };
 
+  // Function to update the selected destination based on the user's click
   const handleClick = (destination) => {
     setSelectedDestination(destination);
   };
 
   return (
     <div>
+      {/* Full-screen background container for the Destination page */}
       <div className='destination w-full h-screen bg-cover bg-center'>
+        
+        {/* Navbar component for navigation links */}
         <Navbar />
+        
+        {/* Title for the Destination section */}
         <p className='text-center lg:text-left lg:pl-28 text-white pt-16 md:pt-8 lg:pt-16 md:right-60  font-[Barlo-Condensed-ExtraLight] tracking-wider text-[18px] md:text-[23px]'>
           <span className='font-[Barlo-Condensed-Bold] pr-7 opacity-50'>01</span>PICK YOUR DESTINATION
         </p>
+
+        {/* Main container for destination image and information */}
         <div className='lg:flex lg:pl-32 lg:pt-24'>
+          
+          {/* Destination image based on the selected destination */}
           <div>
-            <img src={destinations[selectedDestination].image} alt={selectedDestination} className='mx-auto w-36 md:w-80 lg:w-[30rem]  pt-10 lg:pt-20 lg:ml-52' />
+            <img 
+              src={destinations[selectedDestination].image} 
+              alt={selectedDestination} 
+              className='mx-auto w-36 md:w-80 lg:w-[30rem] pt-10 lg:pt-20 lg:ml-52' 
+            />
           </div>
+          
+          {/* Container for destination details and navigation */}
           <div className='lg:pl-52'>
+            
+            {/* Navigation for selecting destinations */}
             <div className='pt-7 lg:pt-24 text-[16px] md:text-[24px] lg:text-[22px] font-[Barlo-Condensed-ExtraLight] tracking-wider'>
               <ul className='flex space-x-8 text-white justify-center'>
                 {Object.keys(destinations).map((destination) => (
                   <li
                     key={destination}
-                    className={`cursor-pointer ${selectedDestination === destination ? 'border-b-2 border-white' : ''}`}
+                    className={`cursor-pointer ${selectedDestination === destination ? 'border-b-2 border-white' : ''}`} // Adds a bottom border to the selected destination
                   >
                     <button
                       onClick={() => handleClick(destination)}
                       className='focus:outline-none pb-2'
                     >
-                      {destination.toUpperCase()}
+                      {destination.toUpperCase()} {/* Display destination names in uppercase */}
                     </button>
                   </li>
                 ))}
               </ul>
             </div>
 
+            {/* Display selected destination details */}
             <div className='text-white text-center'>
-              <h1 className='font-[Bellefair-Regular] text-[50px] md:text-[80px] lg:text-[7rem] pt-4'>{destinations[selectedDestination].name}</h1>
-              <p className="font-[Barlo-Regular] text-[16px] lg:text-[20px] text-[#D0D6F9]" dangerouslySetInnerHTML={{ __html: destinations[selectedDestination].description }}></p>
+              <h1 className='font-[Bellefair-Regular] text-[50px] md:text-[80px] lg:text-[7rem] pt-4'>
+                {destinations[selectedDestination].name} {/* Destination name */}
+              </h1>
+              
+              {/* Destination description */}
+              <p 
+                className="font-[Barlo-Regular] text-[16px] lg:text-[20px] text-[#D0D6F9]" 
+                dangerouslySetInnerHTML={{ __html: destinations[selectedDestination].description }}
+              ></p>
+              
+              {/* Horizontal separator line */}
               <hr className='w-10/12 md:w-1/2 lg:w-[400px] my-4 mx-auto border-[#979797] opacity-50 md:mt-12' />
+              
+              {/* Display average distance and travel time */}
               <div className='flex flex-col md:flex-row md:pt-6 mx-auto md:pl-56 lg:pl-12'>
-                <p className='flex flex-col font-[Bellefair-Regular] text-[28px]  md:text-[36px] lg:text-[25px]'>
+                <p className='flex flex-col font-[Bellefair-Regular] text-[28px] md:text-[36px] lg:text-[25px]'>
                   <span className='font-[Barlo-Condensed-ExtraLight] tracking-widest text-[16px] text-[#D0D6F9]'>AVG. DISTANCE</span>
-                  {destinations[selectedDestination].distance}
+                  {destinations[selectedDestination].distance} {/* Display average distance */}
                 </p>
                 <p className='flex flex-col font-[Bellefair-Regular] text-[28px] md:text-[36px] lg:text-[23px] md:pl-20'>
                   <span className='font-[Barlo-Condensed-ExtraLight] tracking-widest text-[16px] text-[#D0D6F9]'>EST. TRAVEL TIME</span>
-                  {destinations[selectedDestination].travelTime}
+                  {destinations[selectedDestination].travelTime} {/* Display estimated travel time */}
                 </p>
               </div>
             </div>
