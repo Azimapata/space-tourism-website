@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'; 
 import Moon from '../assets/destination/image-moon.png';
 import Mars from '../assets/destination/image-mars.png';
 import Europa from '../assets/destination/image-europa.png';
@@ -61,7 +61,7 @@ const Destination = () => {
   return (
     <div>
       {/* Full-screen background container for the Destination page */}
-      <div className='destination w-full h-screen bg-cover bg-center'>
+      <div className='w-full h-screen bg-center bg-cover destination'>
         
         {/* Navbar component for navigation links */}
         <Navbar />
@@ -88,7 +88,7 @@ const Destination = () => {
             
             {/* Navigation for selecting destinations */}
             <div className='pt-7 lg:pt-24 text-[16px] md:text-[24px] lg:text-[22px] font-[Barlo-Condensed-ExtraLight] tracking-wider'>
-              <ul className='flex space-x-8 text-white justify-center'>
+              <ul className='flex justify-center space-x-8 text-white'>
                 {Object.keys(destinations).map((destination) => (
                   <li
                     key={destination}
@@ -96,7 +96,7 @@ const Destination = () => {
                   >
                     <button
                       onClick={() => handleClick(destination)}
-                      className='focus:outline-none pb-2'
+                      className='pb-2 focus:outline-none'
                     >
                       {destination.toUpperCase()} {/* Display destination names in uppercase */}
                     </button>
@@ -106,7 +106,7 @@ const Destination = () => {
             </div>
 
             {/* Display selected destination details */}
-            <div className='text-white text-center'>
+            <div className='text-center text-white'>
               <h1 className='font-[Bellefair-Regular] text-[50px] md:text-[80px] lg:text-[7rem] pt-4'>
                 {destinations[selectedDestination].name} {/* Destination name */}
               </h1>
@@ -121,7 +121,7 @@ const Destination = () => {
               <hr className='w-10/12 md:w-1/2 lg:w-[400px] my-4 mx-auto border-[#979797] opacity-50 md:mt-12' />
               
               {/* Display average distance and travel time */}
-              <div className='flex flex-col md:flex-row md:pt-6 mx-auto md:pl-56 lg:pl-12'>
+              <div className='flex flex-col mx-auto md:flex-row md:pt-6 md:pl-56 lg:pl-12'>
                 <p className='flex flex-col font-[Bellefair-Regular] text-[28px] md:text-[36px] lg:text-[25px]'>
                   <span className='font-[Barlo-Condensed-ExtraLight] tracking-widest text-[16px] text-[#D0D6F9]'>AVG. DISTANCE</span>
                   {destinations[selectedDestination].distance} {/* Display average distance */}
